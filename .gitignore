@@ -1,0 +1,15 @@
+# Vercel
+.vercel
+
+# Claude Code
+.claude/settings.local.json
+
+# Playwright MCP
+.playwright-mcp/
+
+# Local env files
+.env
+.env.local
+
+# Dependencies
+node_modules/
