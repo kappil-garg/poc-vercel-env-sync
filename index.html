@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POC: Vercel env sync check</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">POC</span>
+      <h1>GitHub → Vercel env sync</h1>
+    </div>
+    <p class="subtitle">
+      Calls <code>/api/check-env</code> to verify <code>GOOGLE_OAUTH_CLIENT_ID</code>
+      was synced from GitHub Secrets to Vercel. The value is never returned.
+    </p>
+
+    <hr class="divider" />
+
+    <div class="section-label">Environment variable</div>
+    <div class="status-row">
+      <span class="env-key">GOOGLE_OAUTH_CLIENT_ID</span>
+      <span class="status-pill loading" id="pill">checking…</span>
+    </div>
+
+    <div class="section-label">API response</div>
+    <div class="raw-block" id="raw">—</div>
+
+    <div class="error-note" id="error-note" style="display:none">
+      <code>/api/check-env</code> is a Vercel serverless function which only runs on
+      a Vercel deployment, not a local file server.
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
